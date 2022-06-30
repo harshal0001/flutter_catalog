@@ -1,5 +1,18 @@
+class CatalogModel {
+  static final items = [
+    Item(
+        id: 01,
+        name: "Iphone 13 Pro Max",
+        desc: "A15 Bionic Chip",
+        price: 999,
+        color: "#33505a",
+        image:
+            "https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iPhone-13-Pro_iPhone-13-Pro-Max_09142021_inline.jpg.large.jpg")
+  ];
+}
+
 class Item {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -14,14 +27,3 @@ class Item {
       required this.color,
       required this.image});
 }
-
-final products = [
-  Item(
-      id: "01",
-      name: "Iphone 13 Pro Max",
-      desc: "A15 Bionic Chip",
-      price: 999,
-      color: "#33505a",
-      image:
-          "https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iPhone-13-Pro_iPhone-13-Pro-Max_09142021_inline.jpg.large.jpg")
-];
