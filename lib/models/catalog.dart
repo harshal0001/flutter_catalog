@@ -1,14 +1,5 @@
 class CatalogModel {
-  static final items = [
-    Item(
-        id: 01,
-        name: "Iphone 13 Pro Max",
-        desc: "A15 Bionic Chip",
-        price: 999,
-        color: "#33505a",
-        image:
-            "https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iPhone-13-Pro_iPhone-13-Pro-Max_09142021_inline.jpg.large.jpg")
-  ];
+  static List<Item> items = [];
 }
 
 class Item {
@@ -26,4 +17,26 @@ class Item {
       required this.price,
       required this.color,
       required this.image});
+
+  //FOR DECODING
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+      id: map["id"],
+      name: map["name"],
+      desc: map["desc"],
+      price: map["price"],
+      color: map["color"],
+      image: map["image"],
+    );
+  }
+
+  //FOR ENCODING
+  toMap() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "price": price,
+        "color": color,
+        "image": image,
+      };
 }

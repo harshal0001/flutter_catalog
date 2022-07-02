@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 10),
                       child: InkWell(
-                        //InkWell and GestureDetector can be used for fucntions liking onTap etc
+                        //InkWell and GestureDetector can be used for fucntions like onTap etc
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
                           duration: Duration(seconds: 1),

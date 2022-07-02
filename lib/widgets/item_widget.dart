@@ -8,7 +8,7 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+      //margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
       child: ListTile(
         onTap: () {},
         leading: Image.network(item.image),
