@@ -12,9 +12,11 @@ class HomeDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -24,18 +26,18 @@ class HomeDetailsPage extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(
-                  MyTheme.darkBluish,
+                  context.theme.buttonColor,
                 ),
                 shape: MaterialStateProperty.all(
                   StadiumBorder(),
                 ),
               ),
-              child: "Buy".text.make(),
-            ).wh(100, 50),
+              child: "Add to cart".text.make(),
+            ).wh(120, 50),
           ],
         ).p32(),
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -50,12 +52,12 @@ class HomeDetailsPage extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
                       catalog.name.text.xl4
-                          .color(MyTheme.darkBluish)
+                          .color(context.theme.accentColor)
                           .bold
                           .make(),
                       catalog.desc.text
@@ -63,6 +65,11 @@ class HomeDetailsPage extends StatelessWidget {
                           .xl
                           .make(),
                       10.heightBox,
+                      "Sit justo erat ut et consetetur eirmod, tempor diam no sed amet eirmod diam at. Amet dolores accusam no erat."
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .p16(),
                     ],
                   ).py64(),
                 ),
